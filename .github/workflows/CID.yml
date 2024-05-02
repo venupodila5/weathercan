@@ -1,10 +1,7 @@
 
 name: Merge Child1 to Child Branch
 
-on:
-  push:
-    branches:
-      - child1
+on: [push]
 jobs:
   Super_lint:
     name: Lint code base
