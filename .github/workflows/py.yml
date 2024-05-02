@@ -1,6 +1,9 @@
 name: Fetch Weather Data
 
 on:
+  push:
+  pull_request:
+  merge_group:
   schedule:
     - cron: '30 4 * * *'  # Run the job daily at 4:30
 
