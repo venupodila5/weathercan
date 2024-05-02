@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 def get_weather_data(city):
     try:
         search_url = f"https://www.google.com/search?q=weather+{city}+canada"
