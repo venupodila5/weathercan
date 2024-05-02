@@ -32,4 +32,4 @@ for city in cities:
         print(f"Weather in {weather_data['city']}:")
         print(f"Temperature: {weather_data['temperature']}")
         print(f"Condition: {weather_data['condition']}")
-        print("-----------------------")
+        print("-----------------------------------------------------")
