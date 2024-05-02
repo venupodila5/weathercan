@@ -34,3 +34,4 @@ for city in cities:
         print(f"Temperature: {weather_data['temperature']}")
         print(f"Condition: {weather_data['condition']}")
         print("----------------------------")
+        print("hello")
