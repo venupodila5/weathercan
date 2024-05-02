@@ -1,29 +1,22 @@
 
 name: Merge Child1 to Child Branch
+on:
+  push:
+  pull_request:
+  merge_group:
 
-on: [push]
 jobs:
-  Super_lint:
-    name: Lint code base
+  commitlint:
     runs-on: ubuntu-latest
+    permissions:
+        contents: read
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Run Super-Linter
         uses: github/super-linter@v3
-        env:
-          DEFAULT_BRANCH: child1
-          GITHUB_TOKEN: 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
-  merge:
-    runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Merge child1 to child_branch
-      run: |
-        git checkout child_branch
-        git merge --no-ff child1
-        git push origin child_branch
+      - name: Validate commits
+        run: |
+          make lint-commits
