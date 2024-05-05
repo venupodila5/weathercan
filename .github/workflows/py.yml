@@ -4,8 +4,8 @@ on:
   push:
   pull_request:
   merge_group:
-  schedule:
-    - cron: '30 4 * * *'  # Run the job daily at 4:30
+  #schedule:
+    # - cron: '30 4 * * *'  # Run the job daily at 4:30
 
 jobs:
   fetch_weather:
